@@ -348,6 +348,7 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Final_Script.cs"
+"Assets/Scripts/Menu_Manager.cs"
 "Assets/Scripts/Player_Script.cs"
 -langversion:9.0
 

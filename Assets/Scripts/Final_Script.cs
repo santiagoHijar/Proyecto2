@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Final_Script : MonoBehaviour
 {
@@ -8,7 +9,15 @@ public class Final_Script : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("has terminado el nivel");
+            int buildIndex = SceneManager.GetActiveScene().buildIndex;
+            if(buildIndex == 2)
+            {
+                SceneManager.LoadScene(0);
+            }
+            else
+            {
+                SceneManager.LoadScene(buildIndex + 1);
+            }
         }
     }
 }

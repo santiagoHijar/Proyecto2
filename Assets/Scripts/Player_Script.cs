@@ -9,10 +9,12 @@ public class Player_Script : MonoBehaviour
     public float fordwardSpeed;
     public float sideForce;
 
+    int halfScreen;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        halfScreen = Screen.width / 2;
     }
 
     // Update is called once per frame
@@ -28,6 +30,18 @@ public class Player_Script : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(new Vector3(sideForce, 0, 0) * Time.deltaTime);
+        }
+
+        if(Input.touchCount > 0)
+        {
+            if(Input.GetTouch(0).position.x <= halfScreen)
+            {
+                rb.AddForce(new Vector3(-sideForce, 0, 0) * Time.deltaTime);
+            }
+            if(Input.GetTouch(0).position.x > halfScreen)
+            {
+                rb.AddForce(new Vector3(sideForce, 0, 0) * Time.deltaTime);
+            }
         }
 
         if(transform.position.y < -5)
